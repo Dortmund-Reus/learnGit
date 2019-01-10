@@ -13,7 +13,6 @@ int main(void)
 //	list1->display();
 	list1->push_front(3);
 	list1->display();
-
 //	DuLNode* s1 = list1->getNodeFront(2);
 //	cout<< s1->data << endl;
 //	DuLNode* s2 = list1->getNodeFront(3);
