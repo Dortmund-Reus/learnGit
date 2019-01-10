@@ -3,11 +3,12 @@
 
 using std::cout;
 using std::endl;
+using std::abort;
 Stack::Stack()          //无参构造函数
 {
 //	for(int i= 0;i < 9; ++i)
  //   _data = {0};
-    int _top = -1;   //top == -1表示栈空，== 10表示溢出
+    _top = -1;   //top == -1表示栈空，== 10表示溢出
 }
 void Stack::push(int x) //入栈操作
 {
@@ -15,8 +16,14 @@ void Stack::push(int x) //入栈操作
 	{
         _data[++_top] = x;
 		cout << x << " is in." << endl;
+		cout <<"top is " << _top << endl;
 	}
-    else cout << "The stack is full..." <<endl;  
+    else
+	{
+		cout << "The stack is full... " << endl
+			 << "Program ends... " << endl;
+		std::abort();
+	}
 }
 void Stack::pop()
 {
